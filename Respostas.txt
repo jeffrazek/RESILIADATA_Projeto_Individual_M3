@@ -1,0 +1,45 @@
+1. Entidades necessárias:
+	Tenologias, Empresas e Colaboradores
+
+2. Principais campos e tipos:
+	Na entidade Tecnologias os campos são ID_TECH(PK), NOME e ÁREA e tipos INT, VARCHAR e VARCHAR respectivamente.
+	Na entidade Empresas os campos são ID_CNPJ(PK), TECNOLOGIAS_ID_TECH(FK), NOME, ENDEREÇO e CONTATO e tipos INT, INT, VARCHAR, VARCHAR e INT respectivamente.
+	Na entidade Colaboradores os campos são ID_CPF(PK), EMPRESAS_ID_CNPJ(FK), NOME e CARGO e tipos INT, INT, VARCHAR e VARCHAR respectivamente.
+
+3. Relacionamento:
+	Tecnologias > Empresas (N,1) | Uma empresa pode ter várias tecnologias;
+	Empresas > Colaboradores (1,N) | Uma empresa pode ter vários colaboradores.
+
+4. Registros:
+	Tecnologia 1: 	ID_TECH = 0001
+			Nome = Site de vendas
+			Área = Desenvolvimento Web
+
+	Tecnologia 2:	ID_TECH = 0002
+			Nome = Oracle
+			Área = Banco de Dados
+
+	Empresa 1:	ID_CNPJ = 12.345.678/0001-11
+			Tecnologias_ID_TECH = 0001
+			Nome = IO Tech S.A.
+			Endereço = Rua São Paulo, 10 - Brasília - Arapiraca - AL
+			Contato = 3522-3522
+
+	Empresa 2:	ID_CNPJ = 12.876.543/0002-33
+			Tecnologias_ID_TECH = 0002
+			Nome = SGBD Tech S.A.
+			Endereço = Rua Alagoas, 44 - Cerejeiras - São Paulo - SP
+			Contato = 3522-1111
+
+	Colaborador 1:	ID_CPF = 123.456.789-00
+			Empresas_ID_CNPJ = 12.345.678/0001-11
+			Nome = Aflanildo Pedro de Sá
+			Cargo = Desenvolvedor Web
+
+	Colaborador 2:	ID_CPF = 112.334.556-77
+			Empresas_ID_CNPJ = 12.876.543/0002-33
+			Nome = Crisóstomo Paulo Assunção
+			Cargo = Analista de Dados
+
+Nesses exemplos de registros o colaborador 1 trabalha na empresa 1 desenvolvendo a tecnologia 1 e o mesmo com o colaborador 2.
+Dados meramente fictícios.
